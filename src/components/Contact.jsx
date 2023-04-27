@@ -1,11 +1,12 @@
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 const Contact = () => {
+  const [success, setSuccess] = useState("");
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setSuccess("");
     emailjs
       .sendForm(
         "service_vr03iuf",
@@ -15,11 +16,9 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setSuccess("Send Message Successful!");
         },
-        (error) => {
-          console.log(error.text);
-        }
+        (error) => {}
       );
   };
   return (
@@ -63,6 +62,9 @@ const Contact = () => {
             rows={4}
           />
         </div>
+        <p className="">
+          <small className="text-green-500 font-medium">{success}</small>
+        </p>
         <Button type="submit">Send Message</Button>
       </form>
     </div>

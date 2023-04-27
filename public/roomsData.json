@@ -1,0 +1,40 @@
+[  {    "id": 1,    "roomNumber": 101,    "roomType": "Standard",    "price": 100,    "bookedDates": ["2023-05-01", "2023-05-02"],
+    "features": ["King size bed", "Flat screen TV", "Free WiFi"],
+    "capacity": 2,
+    "description": "Our standard room offers a comfortable king size bed and modern amenities such as a flat screen TV and free WiFi. Perfect for couples or solo travelers.",
+    "img": "https://example.com/room101.jpg"
+  },
+  {
+    "id": 2,
+    "roomNumber": 102,
+    "roomType": "Standard",
+    "price": 100,
+    "bookedDates": ["2023-05-05"],
+    "features": ["Queen size bed", "Flat screen TV", "Free WiFi"],
+    "capacity": 2,
+    "description": "Our standard room offers a cozy queen size bed and modern amenities such as a flat screen TV and free WiFi. Perfect for couples or solo travelers.",
+    "img": "https://example.com/room102.jpg"
+  },
+  {
+    "id": 3,
+    "roomNumber": 103,
+    "roomType": "Deluxe",
+    "price": 150,
+    "bookedDates": ["2023-05-01"],
+    "features": ["King size bed", "Flat screen TV", "Free WiFi", "Balcony"],
+    "capacity": 2,
+    "description": "Our deluxe room offers a spacious king size bed, modern amenities such as a flat screen TV and free WiFi, and a private balcony with stunning views. Perfect for couples or solo travelers looking for a touch of luxury.",
+    "img": "https://example.com/room103.jpg"
+  },
+  {
+    "id": 4,
+    "roomNumber": 104,
+    "roomType": "Deluxe",
+    "price": 150,
+    "bookedDates": [],
+    "features": ["King size bed", "Flat screen TV", "Free WiFi", "Jacuzzi"],
+    "capacity": 2,
+    "description": "Our deluxe room offers a spacious king size bed, modern amenities such as a flat screen TV and free WiFi, and a private jacuzzi for ultimate relaxation. Perfect for couples or solo travelers looking for a luxurious experience.",
+    "img": "https://example.com/room104.jpg"
+  }
+]

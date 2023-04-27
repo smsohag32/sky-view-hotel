@@ -13,9 +13,10 @@ const Header = () => {
     logoutUser();
     // const navigate = useNavigate();
   };
+
   return (
-    <div className="bg-white shadow-md">
-      <div className="max-w-[1200px] mx-auto w-full">
+    <div className="shadow-md bg-transparent">
+      <div className="max-w-[1200px] bg-transparent mx-auto w-full">
         <Navbar fluid={true} className="bg-inherit" rounded={true}>
           <Navbar.Brand>
             <img src={logo} className="mr-1 h-6 sm:h-9" alt="Flowbite Logo" />

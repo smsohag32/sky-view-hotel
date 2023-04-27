@@ -9,7 +9,9 @@ export default {
     "./public/**/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
   },
   plugins: [
     require("flowbite/plugin")

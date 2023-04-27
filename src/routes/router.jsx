@@ -3,13 +3,13 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import Book from "../pages/Book/Book";
 import Login from "../pages/Login/Login";
-import Contact from "../components/Contact";
 import Rooms from "../components/Rooms/Rooms";
 import Room from "../components/Rooms/Room";
 import Register from "../pages/Login/Register";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <Contact />,
+        element: <ContactUs />,
       },
       {
         path: "rooms",

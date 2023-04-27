@@ -3,13 +3,26 @@ import BookOnline from "./BookOnline";
 
 const HeaderBanner = () => {
   return (
-    <div className="grid grid-cols-3 h-[90vh]">
-      <div className="col-span-2">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil vitae
-        minima quod deserunt ab earum quaerat dignissimos, consectetur odit
-        quibusdam a pariatur porro, illum atque et beatae, enim sed sit?
+    <div className="max-w-[1200px] mx-auto px-5 py-5">
+      <div className="grid md:grid-cols-3">
+        <div className="col-span-2 w-full">
+          <h1 className="text-3xl md:text-5xl font-bold">
+            Welcome to Your Site
+          </h1>
+          <p className="md:max-w-[60%]">
+            <small>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis minima, id nobis cupiditate, cumque assumenda eius
+              vel inventore consequuntur, natus excepturi molestias deserunt
+              sint recusandae fugiat nulla. Magnam, laboriosam expedita.
+            </small>
+          </p>
+          <button>Learn More</button>
+        </div>
+        <div className="w-full mx-auto">
+          <BookOnline />
+        </div>
       </div>
-      <BookOnline />
     </div>
   );
 };

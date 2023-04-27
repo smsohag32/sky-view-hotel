@@ -3,7 +3,7 @@ import React from "react";
 
 const BookOnline = () => {
   return (
-    <div>
+    <div className="w-full mx-auto">
       <form className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">

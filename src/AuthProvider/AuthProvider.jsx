@@ -14,7 +14,7 @@ import {
 import app from "../firebase/firebase.config";
 
 const auth = getAuth(app);
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 const facebookProvider = new FacebookAuthProvider();
 const googleProvider = new GoogleAuthProvider();
 
@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
   // observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser.user);
+      setUser(currentUser);
     });
     // unmount
     return () => {

@@ -7,11 +7,15 @@ import Contact from "../components/Contact";
 import Rooms from "../components/Rooms/Rooms";
 import Room from "../components/Rooms/Room";
 import Register from "../pages/Login/Register";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -19,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "book",
-        element: <Book />,
+        element: (
+          <PrivateRoute>
+            <Book />
+          </PrivateRoute>
+        ),
       },
       {
         path: "login",
@@ -40,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "room/:id",
         element: <Room />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import Header from "../pages/shared/Header";
-import Footer from "../pages/shared/Footer";
+
 import { Outlet } from "react-router-dom";
+import Footers from "../pages/shared/Footer";
 
 const Main = () => {
   return (
@@ -12,7 +13,7 @@ const Main = () => {
         <Outlet />
       </div>
       <div>
-        <Footer />
+        <Footers />
       </div>
     </>
   );

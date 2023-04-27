@@ -1,12 +1,31 @@
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleCreateUser = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirm = e.target.confirm.value;
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="max-w-[1200px] mx-auto">
       <div>
-        <form className="flex flex-col w-[50%] mx-auto h-[80vh] justify-center gap-4">
+        <form
+          onSubmit={handleCreateUser}
+          className="flex flex-col w-[50%] mx-auto min-h-[80vh] justify-center gap-4"
+        >
           <div>
             <div className="mb-2 block">
               <Label htmlFor="name" value="Your Name" />

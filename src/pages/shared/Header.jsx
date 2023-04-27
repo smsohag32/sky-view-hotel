@@ -1,10 +1,18 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import "flowbite";
 import { Button, Navbar } from "flowbite-react";
 import logo from "/skylogo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaBeer, FaUserCircle } from "react-icons/fa";
 const Header = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  // handle logout user
+  const handleLogout = () => {
+    logoutUser();
+    // const navigate = useNavigate();
+  };
   return (
     <div className="bg-white shadow-md">
       <div className="max-w-[1200px] mx-auto w-full">
@@ -15,7 +23,12 @@ const Header = () => {
               ViewHotel
             </span>
           </Navbar.Brand>
-          <div className="flex md:order-2">
+          <div className="flex items-center md:order-2">
+            <Link to="/dashboard">
+              {user && (
+                <FaUserCircle className="text-3xl text-red-600 transform duration-500 mr-5" />
+              )}
+            </Link>
             <Link to="/book">
               <Button>Book Online</Button>
             </Link>
@@ -25,7 +38,13 @@ const Header = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/rooms">Rooms</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
-            <NavLink to="/login">Login</NavLink>
+            {user ? (
+              <span className="transform duration-500" onClick={handleLogout}>
+                <NavLink>Logout</NavLink>
+              </span>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
           </Navbar.Collapse>
         </Navbar>
       </div>

@@ -3,6 +3,7 @@ import React from "react";
 import "flowbite";
 import { Button, Navbar } from "flowbite-react";
 import logo from "/skylogo.png";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <div className="bg-white shadow-md">
@@ -15,17 +16,16 @@ const Header = () => {
             </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
-            <Button>Get started</Button>
+            <Link to="/book">
+              <Button>Book Online</Button>
+            </Link>
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="/navbars" active={true}>
-              Home
-            </Navbar.Link>
-            <Navbar.Link href="/navbars">About</Navbar.Link>
-            <Navbar.Link href="/navbars">Services</Navbar.Link>
-            <Navbar.Link href="/navbars">Pricing</Navbar.Link>
-            <Navbar.Link href="/navbars">Contact</Navbar.Link>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/rooms">Rooms</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </Navbar.Collapse>
         </Navbar>
       </div>

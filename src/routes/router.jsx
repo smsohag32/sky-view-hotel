@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import Contact from "../components/Contact";
 import Rooms from "../components/Rooms/Rooms";
 import Room from "../components/Rooms/Room";
+import Register from "../pages/Login/Register";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
       {
         path: "contact",

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
 import "flowbite";
-import { Button, Navbar } from "flowbite-react";
+import { Avatar, Button, Navbar } from "flowbite-react";
 import logo from "/skylogo.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -25,10 +25,8 @@ const Header = () => {
             </span>
           </Navbar.Brand>
           <div className="flex items-center md:order-2">
-            <Link to="/dashboard">
-              {user && (
-                <FaUserCircle className="text-3xl text-red-600 transform duration-500 mr-5" />
-              )}
+            <Link to="/dashboard" className="mr-3">
+              {user && <Avatar img={user.photoURL} rounded={true} />}
             </Link>
             <Link to="/book">
               <Button>Book Online</Button>

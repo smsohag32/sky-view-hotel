@@ -76,10 +76,10 @@ const BookOnline = () => {
           </Select>
         </div>
         {/* date */}
-        <div className="flex gap-4 justify-between">
+        <div className="flex gap-1 justify-between">
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="arDate" value="Arrival Date" />
+              <Label htmlFor="arDate" value="Arrived Date" />
             </div>
             <TextInput
               id="arDate"
@@ -91,13 +91,13 @@ const BookOnline = () => {
           </div>
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="depDate" value="Departure Date" />
+              <Label htmlFor="depDate" value="To" />
             </div>
             <TextInput
               id="depDate"
               type="date"
               name="depDate"
-              placeholder="Departure Date"
+              placeholder="To"
               required={true}
             />
           </div>

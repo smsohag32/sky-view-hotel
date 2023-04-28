@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import EditAccount from "../pages/Dashboard/EditAccount";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,12 @@ const router = createBrowserRouter([
             <Dashboard />
           </PrivateRoute>
         ),
+        children: [
+          {
+            path: "/dashboard/edit",
+            element: <EditAccount />,
+          },
+        ],
       },
     ],
   },

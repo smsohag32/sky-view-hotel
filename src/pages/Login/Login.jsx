@@ -11,7 +11,6 @@ const Login = () => {
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
   const navigate = useNavigate();
-  console.log(location);
   //   handle user login
   const handleLoginUser = (e) => {
     setIsUserLogin(false);
@@ -35,10 +34,10 @@ const Login = () => {
   };
   return (
     <div className="max-w-[1200px] mx-auto">
-      <div>
+      <div className="">
         <form
           onSubmit={handleLoginUser}
-          className="flex flex-col w-[50%] mt-4 mx-auto h-[70vh] justify-center gap-4"
+          className="flex flex-col w-[50%] mt-6 mx-auto h-[70vh] justify-center gap-4 bg-blue-300 p-5 rounded-md"
         >
           <div>
             <h4 className="font-bold text-2xl mb-5 text-center">

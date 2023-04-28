@@ -5,7 +5,6 @@ import HeaderBanner from "../../components/HeaderBanner";
 import bg from "/bg.jpg";
 const Home = () => {
   const rooms = useLoaderData();
-  console.log(rooms);
   return (
     <>
       <div

@@ -4,12 +4,16 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const EditAccount = () => {
-  const { updateUserData } = useContext(AuthContext);
+  const { updateUserData, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   //   handle updateUser data
   const handleUpdateUser = (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+
+    updateUserData(name, photo);
     navigate("/dashboard");
   };
   return (
@@ -33,6 +37,7 @@ const EditAccount = () => {
                 id="name"
                 type="text"
                 name="name"
+                value={user?.displayName}
                 placeholder="Enter your name"
                 required={true}
               />
@@ -45,6 +50,7 @@ const EditAccount = () => {
                 id="email1"
                 type="email"
                 name="email"
+                value={user?.email}
                 placeholder="Enter your email"
                 required={true}
               />
@@ -57,6 +63,7 @@ const EditAccount = () => {
                 id="photo"
                 type="url"
                 name="photo"
+                value={user?.photoURL}
                 placeholder="Your Photo Url"
                 required={true}
               />

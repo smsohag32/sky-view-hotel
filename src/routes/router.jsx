@@ -51,19 +51,19 @@ const router = createBrowserRouter([
         path: "room/:id",
         element: <Room />,
       },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
       {
-        path: "dashboard",
-        element: (
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>
-        ),
-        children: [
-          {
-            path: "/dashboard/edit",
-            element: <EditAccount />,
-          },
-        ],
+        path: "/dashboard/edit",
+        element: <EditAccount />,
       },
     ],
   },

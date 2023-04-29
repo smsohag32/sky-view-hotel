@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch(`/roomsData.json`),
+        loader: () =>
+          fetch(`https://sky-view-hotel-server-smsohag32.vercel.app/rooms`),
       },
       {
         path: "book",

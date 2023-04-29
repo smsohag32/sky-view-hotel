@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <div className="md:flex gap-3 py-10 md:justify-between">
       <Lottie animationData={contactImg} loop={true} />
-      <div className="w-full bg-blue-300 p-5 md:p-8 rounded-md">
+      <div className="w-[80%] mx-auto bg-blue-300 p-5 md:p-8 rounded-md">
         <form
           ref={form}
           onSubmit={sendEmail}

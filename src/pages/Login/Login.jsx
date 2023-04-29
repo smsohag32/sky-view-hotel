@@ -8,6 +8,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [isUserLogin, setIsUserLogin] = useState(false);
+  const [accepted, setAccepted] = useState(false);
+
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
   const navigate = useNavigate();
@@ -75,10 +77,16 @@ const Login = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <Checkbox id="remember" name="accept" />
+            <Checkbox
+              onClick={(e) => setAccepted(e.target.checked)}
+              id="remember"
+              name="accept"
+            />
             <Label htmlFor="remember">Accept terms and condition.</Label>
           </div>
-          <Button type="submit">Login</Button>
+          <Button disabled={!accepted} type="submit">
+            Login
+          </Button>
           <div>
             <p>
               Don't have an account please{" "}
